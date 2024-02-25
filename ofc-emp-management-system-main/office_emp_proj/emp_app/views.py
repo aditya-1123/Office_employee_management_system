@@ -30,7 +30,7 @@ def add_emp(request):
         new_emp = Employee(first_name= first_name, last_name=last_name, salary=salary, bonus=bonus, phone=phone, dept_id = dept, role_id = role, hire_date = datetime.now())
         new_emp.save()
         return HttpResponse('Employee added Successfully')
-    elif request.method=='GET':
+    elif request.method == 'GET':
         return render(request, 'add_emp.html')
     else:
         return HttpResponse("An Exception Occured! Employee Has Not Been Added")
